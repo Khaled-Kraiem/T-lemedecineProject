@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<!-- MDB icon -->
+		<link
+		rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+		<!-- Font Awesome -->
+		<link
+		rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		<!-- Google Fonts Roboto -->
+		<link
+		rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+		<!-- Bootstrap core CSS -->
+		<link
+		rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+		<!-- Material Design Bootstrap -->
+		<link
+		rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.5.14/css/mdb.min.css">
+
+
+		<!-- Your custom styles (optional) -->
+		<link rel="stylesheet" href="css/style.css">
+
+		<link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css"> {% block stylesheets %}{% endblock %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+			<li class="nav-item">
+				<a class="navbar-brand" href="{{ path('home') }}">Home
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+
+				</li>
+				<div class="collapse navbar-collapse" id="navbarColor01">
+					{% if not app.user %}
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">About</a>
+							</li>
+						</ul>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+							<ul class="navbar-nav ml-auto">
+								<li class="nav-item active">
+									<a class="nav-link" href="{{ path('security_login') }} ">
+										<i class="fas fa-sign-in-alt"></i>
+										Connexion
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('security_registration') }}">
+										<i class="fas fa-user-plus"></i>
+										S'inscrire
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					{% else %}
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Article</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Link 3</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ path('security_logout') }}">
+									<i class="fas fa-sign-out-alt"></i>Déconnexion</a>
+							</li>
+						</ul>
+					{% endif %}
+				</div>
+			</li>
+		</nav>
+	</body>
+</html>
+{% block body %}{% endblock %}
+<!-- jQuery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/js/mdb.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/js/mdb.js"></script>
+
+
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+{% block javascripts %}{% endblock %}

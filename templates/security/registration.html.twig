@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	{{ form_start(form) }}
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			{{ form_row(form.username, {'label': 'Votre Nom' ,'attr':{'placeholder':'Nom','class':'form-control'}})}}
+			{{ form_row(form.email, {'label': 'Votre E-mail','attr':{'placeholder':'Email','class':'form-control'}})}}
+			{{ form_row(form.password, {'label': 'Votre mot de passe' ,'attr':{'placeholder':'votre mot de passe','class':'form-control'}})}}
+			{{ form_row(form.confirm_password, {'label': 'Confirme mot de passe' ,'attr':{'placeholder':'Confirme mot de passe','class':'form-control'}})}}
+			<br><br><br><br>
+			{{ form_end(form) }}
+			<center>
+				<button class="btn btn-success" type="submit">Enregistre</button>
+			</center>
+		</div>
+		<div class="col-sm-4"></div>
+	{% endblock %}
